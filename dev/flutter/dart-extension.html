@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="th-TH">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Dart Extension คืออะไร | Intception Hideout</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="เป็นอีกหนึ่งเรื่องของ Dart ที่จะรู้ไม่รู้ก็ได้ แต่รู้ไว้ก็มีความสะดวกอยู่เหมือนกัน">
+    <meta name="image" content="https://blog.intception.me/flutter/dart-extension.jpg">
+    <meta name="twitter:title" content="Dart Extension คืออะไร">
+    <meta name="twitter:description" content="เป็นอีกหนึ่งเรื่องของ Dart ที่จะรู้ไม่รู้ก็ได้ แต่รู้ไว้ก็มีความสะดวกอยู่เหมือนกัน">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://blog.intception.me/flutter/dart-extension.jpg">
+    <meta name="twitter:url" content="https://blog.intception.me/dev/flutter/dart-extension.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Dart Extension คืออะไร">
+    <meta property="og:description" content="เป็นอีกหนึ่งเรื่องของ Dart ที่จะรู้ไม่รู้ก็ได้ แต่รู้ไว้ก็มีความสะดวกอยู่เหมือนกัน">
+    <meta property="og:image" content="https://blog.intception.me/flutter/dart-extension.jpg">
+    <meta property="og:url" content="https://blog.intception.me/dev/flutter/dart-extension.html">
+    <meta property="og:site_name" content="Intception Hideout">
+    <meta property="article:author" content="https://www.facebook.com/100002134179036">
+    <meta property="article:published_time" content="January 14, 2020 10:00:00">
+    <meta property="article:tag" content="dev">
+    <meta itemprop="name" content="Dart Extension คืออะไร">
+    <meta itemprop="description" content="เป็นอีกหนึ่งเรื่องของ Dart ที่จะรู้ไม่รู้ก็ได้ แต่รู้ไว้ก็มีความสะดวกอยู่เหมือนกัน">
+    <meta itemprop="image" content="https://blog.intception.me/flutter/dart-extension.jpg">
+    <meta property="fb:app_id" content="378991759371355">
+    <meta property="article:publisher" content="https://www.facebook.com/intception">
+    
+    <link rel="preload" href="/assets/css/0.styles.9fcaea78.css" as="style"><link rel="preload" href="/assets/js/app.e8816fbe.js" as="script"><link rel="preload" href="/assets/js/23.98f77880.js" as="script"><link rel="preload" href="/assets/js/2.5511de28.js" as="script"><link rel="preload" href="/assets/js/34.d9701686.js" as="script"><link rel="preload" href="/assets/js/30.ceffa3ae.js" as="script"><link rel="preload" href="/assets/js/29.6bb21054.js" as="script"><link rel="preload" href="/assets/js/41.a1cbfaa2.js" as="script"><link rel="prefetch" href="/assets/js/1.7038105b.js"><link rel="prefetch" href="/assets/js/10.93173d2d.js"><link rel="prefetch" href="/assets/js/11.0f9c5f1c.js"><link rel="prefetch" href="/assets/js/12.91b64e47.js"><link rel="prefetch" href="/assets/js/13.08a3a51f.js"><link rel="prefetch" href="/assets/js/14.c8e0a547.js"><link rel="prefetch" href="/assets/js/15.43c6b249.js"><link rel="prefetch" href="/assets/js/16.99ef011c.js"><link rel="prefetch" href="/assets/js/17.b660276a.js"><link rel="prefetch" href="/assets/js/18.7c32fc21.js"><link rel="prefetch" href="/assets/js/19.3aa4ded7.js"><link rel="prefetch" href="/assets/js/20.f9256596.js"><link rel="prefetch" href="/assets/js/21.4dd2eea6.js"><link rel="prefetch" href="/assets/js/22.bebac973.js"><link rel="prefetch" href="/assets/js/24.97336265.js"><link rel="prefetch" href="/assets/js/25.c15aed46.js"><link rel="prefetch" href="/assets/js/26.cdb80987.js"><link rel="prefetch" href="/assets/js/27.061d534a.js"><link rel="prefetch" href="/assets/js/28.a7dedf0a.js"><link rel="prefetch" href="/assets/js/31.4cee5970.js"><link rel="prefetch" href="/assets/js/32.958c025c.js"><link rel="prefetch" href="/assets/js/33.1baa13ba.js"><link rel="prefetch" href="/assets/js/35.25566597.js"><link rel="prefetch" href="/assets/js/36.455eb1cd.js"><link rel="prefetch" href="/assets/js/37.f9701788.js"><link rel="prefetch" href="/assets/js/38.7adbe429.js"><link rel="prefetch" href="/assets/js/39.0e42479f.js"><link rel="prefetch" href="/assets/js/4.d70afffc.js"><link rel="prefetch" href="/assets/js/40.6427dc18.js"><link rel="prefetch" href="/assets/js/42.a1b17ae6.js"><link rel="prefetch" href="/assets/js/43.b629483d.js"><link rel="prefetch" href="/assets/js/44.3ce67008.js"><link rel="prefetch" href="/assets/js/45.58b17ad5.js"><link rel="prefetch" href="/assets/js/46.68e3b49f.js"><link rel="prefetch" href="/assets/js/47.72e2cea9.js"><link rel="prefetch" href="/assets/js/48.2928f898.js"><link rel="prefetch" href="/assets/js/49.94a83419.js"><link rel="prefetch" href="/assets/js/5.dbd44f85.js"><link rel="prefetch" href="/assets/js/6.2ecdc96d.js"><link rel="prefetch" href="/assets/js/7.1abc7760.js"><link rel="prefetch" href="/assets/js/8.47b30f38.js"><link rel="prefetch" href="/assets/js/9.3d2ae7fe.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.9fcaea78.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div data-v-500e1d8c><div class="theme-container" data-v-500e1d8c><header class="navbar" data-v-500e1d8c><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="Intception Hideout" class="logo"> <span class="site-name can-hide">Intception Hideout</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><a href="/dev/" class="nav-link router-link-active">Dev</a></div><div class="nav-item"><a href="/lifestyle/" class="nav-link">Lifestyle</a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-500e1d8c></div> <aside class="sidebar" data-v-500e1d8c><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><a href="/dev/" class="nav-link router-link-active">Dev</a></div><div class="nav-item"><a href="/lifestyle/" class="nav-link">Lifestyle</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Dart Extension คืออะไร</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/dev/flutter/dart-extension.html#เบื้องต้น" class="sidebar-link">เบื้องต้น</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/dev/flutter/dart-extension.html#มาใช้-extension-กันเถอะ" class="sidebar-link">มาใช้ Extension กันเถอะ</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/dev/flutter/dart-extension.html#ใช้กับ-class-พื้นฐานได้" class="sidebar-link">ใช้กับ Class พื้นฐานได้</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page" data-v-500e1d8c> <div class="theme-default-content content__default"><h1 id="dart-extension-คืออะไร"><a href="#dart-extension-คืออะไร" class="header-anchor">#</a> Dart Extension คืออะไร</h1> <span data-v-11962d9e><a href="/?tag=dev" class="tag-element" data-v-eeb2ca7e data-v-11962d9e>#Dev</a><a href="/?tag=dart" class="tag-element" data-v-eeb2ca7e data-v-11962d9e>#Dart</a><a href="/?tag=flutter" class="tag-element" data-v-eeb2ca7e data-v-11962d9e>#Flutter</a><a href="/?tag=extension" class="tag-element" data-v-eeb2ca7e data-v-11962d9e>#Extension</a><a href="/?tag=feature" class="tag-element" data-v-eeb2ca7e data-v-11962d9e>#Feature</a></span> <p>เป็นอีกหนึ่งเรื่องของ Dart ที่จะรู้ไม่รู้ก็ได้ แต่รู้ไว้ก็มีความสะดวกอยู่เหมือนกัน</p> <img src="/assets/img/00.f7955fb8.jpg" alt="Header"><h2 id="เบื้องต้น"><a href="#เบื้องต้น" class="header-anchor">#</a> เบื้องต้น</h2> <p>สมมติว่าเรามีโค้ดหน้าตาประมาณนี้</p> <div class="language-dart extra-class"><pre class="language-dart"><code><span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> user1 <span class="token operator">=</span> <span class="token function">User</span><span class="token punctuation">(</span><span class="token string">'Intception'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  user1<span class="token punctuation">.</span><span class="token function">sayHi</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// สมมติว่าเป็น class จาก Library</span>
+<span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+  String name<span class="token punctuation">;</span>
+
+  <span class="token function">User</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">void</span> <span class="token function">sayHi</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'Hi, my name is \'$name\''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>จะได้ผลลัพธ์</p> <div class="language- extra-class"><pre class="language-text"><code>Hi, my name is 'Intception'
+</code></pre></div><p>ทีนี้ถ้าเราอยากให้มัน sayHi เป็นภาษาไทยแทนล่ะ โดยปกติเราจะใช้การ Inherit เอาประมาณนี้</p> <div class="language-dart extra-class"><div class="highlight-lines"><br><div class="highlighted"> </div><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><br></div><pre class="language-dart"><code><span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> user1 <span class="token operator">=</span> <span class="token function">ThaiUser</span><span class="token punctuation">(</span><span class="token string">'Intception'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  user1<span class="token punctuation">.</span><span class="token function">sayHi</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  user1<span class="token punctuation">.</span><span class="token function">sayHiInThai</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// สมมติว่าเป็น class จาก Library</span>
+<span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+  String name<span class="token punctuation">;</span>
+
+  <span class="token function">User</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">void</span> <span class="token function">sayHi</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'Hi, my name is \'$name\''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// วิธีแบบใช้การ Inherit</span>
+<span class="token keyword">class</span> <span class="token class-name">ThaiUser</span> <span class="token keyword">extends</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+  <span class="token function">ThaiUser</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token keyword">super</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">void</span> <span class="token function">sayHiInThai</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'สวัสดี, ฉันชื่อ \'$name\''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>จะได้ผลลัพธ์</p> <div class="language- extra-class"><pre class="language-text"><code>Hi, my name is 'Intception'
+สวัสดี, ฉันชื่อ 'Intception'
+</code></pre></div><p>ซึ่งถามว่าได้ไหม มันก็ได้นะ...แต่ว่าบาง Class ที่เขียนซับซ้อนกว่านี้ หรือมีการใช้งานเฉพาะกว่านี้ มันอาจจะบังคับให้เราใช้ <strong>User</strong> เราไม่สามารถใช้ <strong>ThaiUser</strong> ที่เรา Inherit ต่อมาได้</p> <h2 id="มาใช้-extension-กันเถอะ"><a href="#มาใช้-extension-กันเถอะ" class="header-anchor">#</a> มาใช้ Extension กันเถอะ</h2> <p>ผมสามารถเปลี่ยนจากการ Inherit ข้างบนได้ว่า</p> <div class="language-dart extra-class"><div class="highlight-lines"><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><br></div><pre class="language-dart"><code><span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> user1 <span class="token operator">=</span> <span class="token function">User</span><span class="token punctuation">(</span><span class="token string">'Intception'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ใช้ User เหมือนเดิม</span>
+  user1<span class="token punctuation">.</span><span class="token function">sayHi</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  user1<span class="token punctuation">.</span><span class="token function">sayHiInThai</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// สมมติว่าเป็น class จาก Library</span>
+<span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+  String name<span class="token punctuation">;</span>
+
+  <span class="token function">User</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">void</span> <span class="token function">sayHi</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'Hi, my name is \'$name\''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// วิธีแบบใช้ extension</span>
+<span class="token keyword">extension</span> <span class="token keyword">on</span> User <span class="token punctuation">{</span>
+  <span class="token keyword">void</span> <span class="token function">sayHiInThai</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'สวัสดี, ฉันชื่อ \'$name\''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>จะได้ผลลัพธ์เหมือนเดิม</p> <div class="language- extra-class"><pre class="language-text"><code>Hi, my name is 'Intception'
+สวัสดี, ฉันชื่อ 'Intception'
+</code></pre></div><p>อย่างที่เห็นก็คือ เราสามารถยัด Method เพิ่มลงไปใน class ที่มีอยู่แล้วได้เลย</p> <h2 id="ใช้กับ-class-พื้นฐานได้"><a href="#ใช้กับ-class-พื้นฐานได้" class="header-anchor">#</a> ใช้กับ Class พื้นฐานได้</h2> <p>เราสามารถใช้ extension กับพวก int, String, Object, List&lt;&gt; Map&lt;&gt; ได้ด้วยครับ เช่น</p> <div class="language-dart extra-class"><pre class="language-dart"><code><span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">print</span><span class="token punctuation">(</span><span class="token number">2.</span>pow2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">var</span> myList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token function">print</span><span class="token punctuation">(</span><span class="token function">sum</span><span class="token punctuation">(</span>myList<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">print</span><span class="token punctuation">(</span>myList<span class="token punctuation">.</span>sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// สามารถใช้ extension กับ class พื้นฐานได้</span>
+<span class="token keyword">extension</span> <span class="token keyword">on</span> int <span class="token punctuation">{</span>
+  int <span class="token keyword">get</span> pow2 <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword">this</span> <span class="token operator">*</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// ปกติถ้าเราจะ sum เราอาจจะสร้างฟังก์ชันขึ้นมาก็ได้ เช่น</span>
+int <span class="token function">sum</span><span class="token punctuation">(</span>List<span class="token operator">&lt;</span>int<span class="token operator">&gt;</span> list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> list<span class="token punctuation">.</span><span class="token function">fold</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// แต่เราสามารถทำแบบนี้ก็ได้ด้วยครับ</span>
+<span class="token keyword">extension</span> <span class="token keyword">on</span> List<span class="token operator">&lt;</span>int<span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  int <span class="token keyword">get</span> sum <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">fold</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>จะได้ผลลัพธ์</p> <div class="language- extra-class"><pre class="language-text"><code>4
+6
+6
+</code></pre></div><p>สั้นๆก็มีเท่านี้ ลองไปประยุกต์ใช้กันดูนะครับ</p></div> <footer class="page-edit"><!----> <div data-href="https://blog.intception.me/dev/flutter/dart-extension.html" data-width="100%" data-numposts="5" class="fb-comments" style="max-width:99%;"></div> <div class="last-updated"><span class="prefix">อัปเดตเมื่อ: </span> <span class="time">1 ปีที่แล้ว</span></div></footer> <!----> </main></div></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.e8816fbe.js" defer></script><script src="/assets/js/23.98f77880.js" defer></script><script src="/assets/js/2.5511de28.js" defer></script><script src="/assets/js/34.d9701686.js" defer></script><script src="/assets/js/30.ceffa3ae.js" defer></script><script src="/assets/js/29.6bb21054.js" defer></script><script src="/assets/js/41.a1cbfaa2.js" defer></script>
+  </body>
+</html>

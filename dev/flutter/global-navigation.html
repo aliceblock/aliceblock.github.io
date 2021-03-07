@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="th-TH">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Navigate โดยไม่ต้องมี Context | Intception Hideout</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="คือโดยปกติแล้วเวลาเราต้องการเปลี่ยนหน้าในแอปของเรา เราจะต้องใช้ Context ในการควบคุมการเปลี่ยนหน้า">
+    <meta name="image" content="https://blog.intception.me/flutter/global-navigation.jpg">
+    <meta name="twitter:title" content="Navigate โดยไม่ต้องมี Context">
+    <meta name="twitter:description" content="คือโดยปกติแล้วเวลาเราต้องการเปลี่ยนหน้าในแอปของเรา เราจะต้องใช้ Context ในการควบคุมการเปลี่ยนหน้า">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://blog.intception.me/flutter/global-navigation.jpg">
+    <meta name="twitter:url" content="https://blog.intception.me/dev/flutter/global-navigation.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Navigate โดยไม่ต้องมี Context">
+    <meta property="og:description" content="คือโดยปกติแล้วเวลาเราต้องการเปลี่ยนหน้าในแอปของเรา เราจะต้องใช้ Context ในการควบคุมการเปลี่ยนหน้า">
+    <meta property="og:image" content="https://blog.intception.me/flutter/global-navigation.jpg">
+    <meta property="og:url" content="https://blog.intception.me/dev/flutter/global-navigation.html">
+    <meta property="og:site_name" content="Intception Hideout">
+    <meta property="article:author" content="https://www.facebook.com/100002134179036">
+    <meta property="article:published_time" content="November 1, 2019 10:00:00">
+    <meta property="article:tag" content="dev">
+    <meta itemprop="name" content="Navigate โดยไม่ต้องมี Context">
+    <meta itemprop="description" content="คือโดยปกติแล้วเวลาเราต้องการเปลี่ยนหน้าในแอปของเรา เราจะต้องใช้ Context ในการควบคุมการเปลี่ยนหน้า">
+    <meta itemprop="image" content="https://blog.intception.me/flutter/global-navigation.jpg">
+    <meta property="fb:app_id" content="378991759371355">
+    <meta property="article:publisher" content="https://www.facebook.com/intception">
+    
+    <link rel="preload" href="/assets/css/0.styles.9fcaea78.css" as="style"><link rel="preload" href="/assets/js/app.e8816fbe.js" as="script"><link rel="preload" href="/assets/js/23.98f77880.js" as="script"><link rel="preload" href="/assets/js/2.5511de28.js" as="script"><link rel="preload" href="/assets/js/32.958c025c.js" as="script"><link rel="preload" href="/assets/js/30.ceffa3ae.js" as="script"><link rel="preload" href="/assets/js/29.6bb21054.js" as="script"><link rel="preload" href="/assets/js/41.a1cbfaa2.js" as="script"><link rel="prefetch" href="/assets/js/1.7038105b.js"><link rel="prefetch" href="/assets/js/10.93173d2d.js"><link rel="prefetch" href="/assets/js/11.0f9c5f1c.js"><link rel="prefetch" href="/assets/js/12.91b64e47.js"><link rel="prefetch" href="/assets/js/13.08a3a51f.js"><link rel="prefetch" href="/assets/js/14.c8e0a547.js"><link rel="prefetch" href="/assets/js/15.43c6b249.js"><link rel="prefetch" href="/assets/js/16.99ef011c.js"><link rel="prefetch" href="/assets/js/17.b660276a.js"><link rel="prefetch" href="/assets/js/18.7c32fc21.js"><link rel="prefetch" href="/assets/js/19.3aa4ded7.js"><link rel="prefetch" href="/assets/js/20.f9256596.js"><link rel="prefetch" href="/assets/js/21.4dd2eea6.js"><link rel="prefetch" href="/assets/js/22.bebac973.js"><link rel="prefetch" href="/assets/js/24.97336265.js"><link rel="prefetch" href="/assets/js/25.c15aed46.js"><link rel="prefetch" href="/assets/js/26.cdb80987.js"><link rel="prefetch" href="/assets/js/27.061d534a.js"><link rel="prefetch" href="/assets/js/28.a7dedf0a.js"><link rel="prefetch" href="/assets/js/31.4cee5970.js"><link rel="prefetch" href="/assets/js/33.1baa13ba.js"><link rel="prefetch" href="/assets/js/34.d9701686.js"><link rel="prefetch" href="/assets/js/35.25566597.js"><link rel="prefetch" href="/assets/js/36.455eb1cd.js"><link rel="prefetch" href="/assets/js/37.f9701788.js"><link rel="prefetch" href="/assets/js/38.7adbe429.js"><link rel="prefetch" href="/assets/js/39.0e42479f.js"><link rel="prefetch" href="/assets/js/4.d70afffc.js"><link rel="prefetch" href="/assets/js/40.6427dc18.js"><link rel="prefetch" href="/assets/js/42.a1b17ae6.js"><link rel="prefetch" href="/assets/js/43.b629483d.js"><link rel="prefetch" href="/assets/js/44.3ce67008.js"><link rel="prefetch" href="/assets/js/45.58b17ad5.js"><link rel="prefetch" href="/assets/js/46.68e3b49f.js"><link rel="prefetch" href="/assets/js/47.72e2cea9.js"><link rel="prefetch" href="/assets/js/48.2928f898.js"><link rel="prefetch" href="/assets/js/49.94a83419.js"><link rel="prefetch" href="/assets/js/5.dbd44f85.js"><link rel="prefetch" href="/assets/js/6.2ecdc96d.js"><link rel="prefetch" href="/assets/js/7.1abc7760.js"><link rel="prefetch" href="/assets/js/8.47b30f38.js"><link rel="prefetch" href="/assets/js/9.3d2ae7fe.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.9fcaea78.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div data-v-500e1d8c><div class="theme-container" data-v-500e1d8c><header class="navbar" data-v-500e1d8c><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="Intception Hideout" class="logo"> <span class="site-name can-hide">Intception Hideout</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><a href="/dev/" class="nav-link router-link-active">Dev</a></div><div class="nav-item"><a href="/lifestyle/" class="nav-link">Lifestyle</a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-500e1d8c></div> <aside class="sidebar" data-v-500e1d8c><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><a href="/dev/" class="nav-link router-link-active">Dev</a></div><div class="nav-item"><a href="/lifestyle/" class="nav-link">Lifestyle</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Navigate โดยไม่ต้องมี Context</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/dev/flutter/global-navigation.html#สร้างโปรเจค" class="sidebar-link">สร้างโปรเจค</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/dev/flutter/global-navigation.html#ลองทํา-navigate-แบบปกติดูก่อน" class="sidebar-link">ลองทำ Navigate แบบปกติดูก่อน</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/dev/flutter/global-navigation.html#ทําให้-navigate-จากโค้ดส่วนไหนก็ได้" class="sidebar-link">ทำให้ Navigate จากโค้ดส่วนไหนก็ได้</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/dev/flutter/global-navigation.html#ติดตั้ง-get-it" class="sidebar-link">ติดตั้ง get_it</a></li><li class="sidebar-sub-header"><a href="/dev/flutter/global-navigation.html#สร้าง-service-locator" class="sidebar-link">สร้าง Service Locator</a></li><li class="sidebar-sub-header"><a href="/dev/flutter/global-navigation.html#นํา-service-locator-ไปใช้งาน" class="sidebar-link">นำ Service Locator ไปใช้งาน</a></li></ul></li></ul></section></li></ul> </aside> <main class="page" data-v-500e1d8c> <div class="theme-default-content content__default"><h1 id="navigate-โดยไม่ต้องมี-context"><a href="#navigate-โดยไม่ต้องมี-context" class="header-anchor">#</a> Navigate โดยไม่ต้องมี Context</h1> <span data-v-11962d9e><a href="/?tag=dev" class="tag-element" data-v-eeb2ca7e data-v-11962d9e>#Dev</a><a href="/?tag=flutter" class="tag-element" data-v-eeb2ca7e data-v-11962d9e>#Flutter</a></span> <p>คือโดยปกติแล้วเวลาเราต้องการเปลี่ยนหน้าในแอปของเรา เราจะต้องใช้ <strong>context</strong> ในการควบคุมการเปลี่ยนหน้า และในบทความนี้เราจะมีสอนการทำแบบไม่ต้องใช้ <strong>context</strong> กัน
+เช่น <code>Navigator.of(context).push(...)</code> ที่ใช้ในการเปลี่ยนไปยังหน้า...
+ซึ่งผมไปอ่านบทความจากอันนี้มาอีกทีเห็นว่ามีประโยชน์ดีเลยเอามาเขียนครับ <a href="https://medium.com/flutter-community/navigate-without-context-in-flutter-with-a-navigation-service-e6d76e880c1c" target="_blank" rel="noopener noreferrer">Navigate without context in Flutter with a Navigation Service<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <img src="/assets/img/00.b0c5dffb.jpg" alt="Header"><h2 id="สร้างโปรเจค"><a href="#สร้างโปรเจค" class="header-anchor">#</a> สร้างโปรเจค</h2> <div class="language-sh extra-class"><pre class="language-sh"><code>flutter create global_navigation
+</code></pre></div><p>จากนั้นก็ลอกโค้ดด้านล้างนี้ไปใส่ใน <code>lib/main.dart</code> ครับ</p> <div class="language-dart extra-class"><pre class="language-dart"><code><span class="token keyword">import</span> <span class="token string">'package:flutter/material.dart'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">runApp</span><span class="token punctuation">(</span><span class="token function">MyApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MyApp</span> <span class="token keyword">extends</span> <span class="token class-name">StatelessWidget</span> <span class="token punctuation">{</span>
+  <span class="token metadata symbol">@override</span>
+  Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">MaterialApp</span><span class="token punctuation">(</span>
+      title<span class="token punctuation">:</span> <span class="token string">'Flutter Demo'</span><span class="token punctuation">,</span>
+      theme<span class="token punctuation">:</span> <span class="token function">ThemeData</span><span class="token punctuation">(</span>
+        primarySwatch<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>blue<span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token comment">// กำหนด Route ในการเปลี่ยนหน้าแอป</span>
+      onGenerateRoute<span class="token punctuation">:</span> <span class="token punctuation">(</span>settings<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">switch</span> <span class="token punctuation">(</span>settings<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">case</span> <span class="token string">'about'</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token function">MaterialPageRoute</span><span class="token punctuation">(</span>builder<span class="token punctuation">:</span> <span class="token punctuation">(</span>context<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">AboutPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">case</span> <span class="token string">'home'</span><span class="token punctuation">:</span>
+          <span class="token keyword">default</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token function">MaterialPageRoute</span><span class="token punctuation">(</span>builder<span class="token punctuation">:</span> <span class="token punctuation">(</span>context<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">HomePage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">// กำหนดให้เริ่มต้นที่หน้า home</span>
+      initialRoute<span class="token punctuation">:</span> <span class="token string">'home'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">HomePage</span> <span class="token keyword">extends</span> <span class="token class-name">StatelessWidget</span> <span class="token punctuation">{</span>
+  <span class="token metadata symbol">@override</span>
+  Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">Scaffold</span><span class="token punctuation">(</span>
+      body<span class="token punctuation">:</span> <span class="token function">Center</span><span class="token punctuation">(</span>
+        child<span class="token punctuation">:</span> <span class="token function">Column</span><span class="token punctuation">(</span>
+          mainAxisSize<span class="token punctuation">:</span> MainAxisSize<span class="token punctuation">.</span>min<span class="token punctuation">,</span>
+          children<span class="token punctuation">:</span> <span class="token operator">&lt;</span>Widget<span class="token operator">&gt;</span><span class="token punctuation">[</span>
+            <span class="token function">Text</span><span class="token punctuation">(</span>
+              <span class="token string">'Home'</span><span class="token punctuation">,</span>
+              style<span class="token punctuation">:</span> <span class="token function">TextStyle</span><span class="token punctuation">(</span>
+                fontSize<span class="token punctuation">:</span> <span class="token number">18.0</span><span class="token punctuation">,</span>
+                fontWeight<span class="token punctuation">:</span> FontWeight<span class="token punctuation">.</span>bold<span class="token punctuation">,</span>
+              <span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token function">RaisedButton</span><span class="token punctuation">(</span>
+              child<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">'Go to about'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+              onPressed<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">)</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">AboutPage</span> <span class="token keyword">extends</span> <span class="token class-name">StatelessWidget</span> <span class="token punctuation">{</span>
+  <span class="token metadata symbol">@override</span>
+  Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">Scaffold</span><span class="token punctuation">(</span>
+      body<span class="token punctuation">:</span> <span class="token function">Center</span><span class="token punctuation">(</span>
+        child<span class="token punctuation">:</span> <span class="token function">Column</span><span class="token punctuation">(</span>
+          mainAxisSize<span class="token punctuation">:</span> MainAxisSize<span class="token punctuation">.</span>min<span class="token punctuation">,</span>
+          children<span class="token punctuation">:</span> <span class="token operator">&lt;</span>Widget<span class="token operator">&gt;</span><span class="token punctuation">[</span>
+            <span class="token function">Text</span><span class="token punctuation">(</span>
+              <span class="token string">'About'</span><span class="token punctuation">,</span>
+              style<span class="token punctuation">:</span> <span class="token function">TextStyle</span><span class="token punctuation">(</span>
+                fontSize<span class="token punctuation">:</span> <span class="token number">18.0</span><span class="token punctuation">,</span>
+                fontWeight<span class="token punctuation">:</span> FontWeight<span class="token punctuation">.</span>bold<span class="token punctuation">,</span>
+              <span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token function">RaisedButton</span><span class="token punctuation">(</span>
+              child<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">'Go to home'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+              onPressed<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">)</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>ลองรันดูก็จะพบกับหน้าแอปแบบนี้ครับ</p> <center class="medium-zoom"><div class="force-max" style="max-width:50%;"><img src="/assets/img/01.4f5183fb.png" alt="Title"></div> <div class="caption">หน้าแอปเริ่มต้น</div></center> <p>ซึ่งจากโค้ดด้านบนจะยังไปหน้าอื่นไม่ได้ครับ (ยังไม่ได้เขียน)</p> <h2 id="ลองทํา-navigate-แบบปกติดูก่อน"><a href="#ลองทํา-navigate-แบบปกติดูก่อน" class="header-anchor">#</a> ลองทำ Navigate แบบปกติดูก่อน</h2> <p>เพิ่ม <strong>Navigator</strong> แบบที่ยังต้องใช้ <strong>context</strong> กันดูก่อนครับ</p> <div class="language-dart extra-class"><div class="highlight-lines"><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br></div><pre class="language-dart"><code><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token function">RaisedButton</span><span class="token punctuation">(</span>
+  child<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">'Go to about'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  onPressed<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Navigator<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">pushReplacementNamed</span><span class="token punctuation">(</span><span class="token string">'about'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token function">RaisedButton</span><span class="token punctuation">(</span>
+  child<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">'Go to home'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  onPressed<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Navigator<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">pushReplacementNamed</span><span class="token punctuation">(</span><span class="token string">'home'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+</code></pre></div><p>ลองกดปุ่มในแอปเล่นดูก็จะพบว่าสามารถเปลี่ยนหน้าได้แล้ว</p> <div class="tip custom-block"><p class="custom-block-title">Note</p> <p><strong>Navigator.of(context).pushReplacementNamed(...)</strong> จะเป็นการเปลี่ยนหน้าแบบทับหน้าเดิม ถ้าเราอยากเปลี่ยนหน้าโดยกลับมาหน้าเดิมได้ให้ใช้ <strong>Navigator.of(context).push(...)</strong> แทนครับ</p></div> <p>ทีนี้จะเกิดปัญหาอย่างนึงก็คือ ถ้าผมต้องการแยกส่วนของ <strong>onPressed</strong> ไปเป็นฟังก์ชันก็จะไม่สามารถทำได้ เพราะใน <strong>StatelessWidget</strong> จะไม่มี <strong>context</strong> ให้เราใช้ อาจจะต้องแก้เป็น <strong>StatefulWidget</strong> ก็จะทำงานได้ปกติ</p> <div class="language-dart extra-class"><pre class="language-dart"><code><span class="token keyword">void</span> <span class="token function">navigateTo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ไม่มี context ให้ใช้ใน StatelessWidget</span>
+  Navigator<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">pushReplacementNamed</span><span class="token punctuation">(</span><span class="token string">'about'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="ทําให้-navigate-จากโค้ดส่วนไหนก็ได้"><a href="#ทําให้-navigate-จากโค้ดส่วนไหนก็ได้" class="header-anchor">#</a> ทำให้ Navigate จากโค้ดส่วนไหนก็ได้</h2> <p>ก่อนอื่นเราจะมีใช้ Library ที่มีชื่อว่า <a href="https://pub.dev/packages/get_it" target="_blank" rel="noopener noreferrer">get_it<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> กันครับ ซึ่งเจ้า <strong>get_it</strong> เนี่ยมีประโยชน์มากมาย แต่ในที่นี้เราจะใช้มันมาสร้าง <a href="https://medium.com/20scoops-cnx/singleton-pattern-%E0%B8%84%E0%B8%B7%E0%B8%AD%E0%B8%AD%E0%B8%B0%E0%B9%84%E0%B8%A3-b7b28182654f" target="_blank" rel="noopener noreferrer">Singleton<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> กันครับ</p> <h3 id="ติดตั้ง-get-it"><a href="#ติดตั้ง-get-it" class="header-anchor">#</a> ติดตั้ง get_it</h3> <p>เพิ่ม <strong>get_it</strong> ใน <code>pubspec.yaml</code></p> <div class="language-yaml extra-class"><div class="highlight-lines"><br><br><div class="highlighted"> </div><br></div><pre class="language-yaml"><code><span class="token key atrule">dependencies</span><span class="token punctuation">:</span>
+  <span class="token punctuation">...</span>
+  <span class="token key atrule">get_it</span><span class="token punctuation">:</span> ^3.0.3
+</code></pre></div><h3 id="สร้าง-service-locator"><a href="#สร้าง-service-locator" class="header-anchor">#</a> สร้าง Service Locator</h3> <p>สร้างไฟล์ <code>lib/service_locator.dart</code> กันครับ</p> <div class="language-dart extra-class"><pre class="language-dart"><code><span class="token keyword">import</span> <span class="token string">'package:flutter/widgets.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:get_it/get_it.dart'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// จะได้ Instance ของ GetIt มาซึ่งมีเพียงตัวเดียวในโปรแกรม เรียกที่ไหนก็ได้ตัวเดียวกัน</span>
+GetIt locator <span class="token operator">=</span> GetIt<span class="token punctuation">.</span>instance<span class="token punctuation">;</span>
+
+<span class="token comment">// ฟังก์ชันเริ่มต้นในการกำหนดว่าจะสร้าง Singleton หรือ อะไรบ้าง</span>
+<span class="token keyword">void</span> <span class="token function">setupLocator</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// สร้าง Singleton ของ class NavigationService</span>
+  locator<span class="token punctuation">.</span><span class="token function">registerLazySingleton</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">NavigationService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">NavigationService</span> <span class="token punctuation">{</span>
+  <span class="token keyword">final</span> GlobalKey<span class="token operator">&lt;</span>NavigatorState<span class="token operator">&gt;</span> navigatorKey <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GlobalKey</span><span class="token operator">&lt;</span>NavigatorState<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  Future<span class="token operator">&lt;</span><span class="token keyword">dynamic</span><span class="token operator">&gt;</span> <span class="token function">navigateTo</span><span class="token punctuation">(</span>String routeName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> navigatorKey<span class="token punctuation">.</span>currentState<span class="token punctuation">.</span><span class="token function">pushReplacementNamed</span><span class="token punctuation">(</span>routeName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="นํา-service-locator-ไปใช้งาน"><a href="#นํา-service-locator-ไปใช้งาน" class="header-anchor">#</a> นำ Service Locator ไปใช้งาน</h3> <p>จากนั้นเราจะแก้ <code>lib/main.dart</code> ให้เรียกใช้ <strong>GetIt</strong> และ <strong>locator</strong> ของเรา<br>
+โดยเราสามารถเข้าถึง <strong>NavigationService</strong> ที่เป็น <strong>Singleton</strong> ได้ผ่านคำสั่ง <code>locator&lt;NavigationService&gt;()</code></p> <div class="language-dart extra-class"><div class="highlight-lines"><br><div class="highlighted"> </div><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br></div><pre class="language-dart"><code><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">import</span> <span class="token string">'service_locator.dart'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">setupLocator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">runApp</span><span class="token punctuation">(</span><span class="token function">MyApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MyApp</span> <span class="token keyword">extends</span> <span class="token class-name">StatelessWidget</span> <span class="token punctuation">{</span>
+  <span class="token metadata symbol">@override</span>
+  Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">MaterialApp</span><span class="token punctuation">(</span>
+      title<span class="token punctuation">:</span> <span class="token string">'Flutter Demo'</span><span class="token punctuation">,</span>
+      theme<span class="token punctuation">:</span> <span class="token function">ThemeData</span><span class="token punctuation">(</span>
+        primarySwatch<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>blue<span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token comment">// เก็บ NavigatorState ใน navigatorKey ใน NavigationService ของเรา</span>
+      navigatorKey<span class="token punctuation">:</span> locator<span class="token operator">&lt;</span>NavigationService<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>navigatorKey<span class="token punctuation">,</span>
+      <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token function">RaisedButton</span><span class="token punctuation">(</span>
+  child<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">'Go to about'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  onPressed<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    locator<span class="token operator">&lt;</span>NavigationService<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">navigateTo</span><span class="token punctuation">(</span><span class="token string">'about'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token function">RaisedButton</span><span class="token punctuation">(</span>
+  child<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">'Go to home'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  onPressed<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    locator<span class="token operator">&lt;</span>NavigationService<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">navigateTo</span><span class="token punctuation">(</span><span class="token string">'home'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</code></pre></div><p>ส่วนสำคัญของโค้ดนี้ก็คือ <strong>navigatorKey</strong> ใน <strong>MaterialApp</strong> ครับ คือเมื่อเราสร้าง <strong>MaterialApp</strong> จะมีการสร้าง <strong>Navigator</strong> มาใช้งานด้วย (สามารถดูใน Source ของ <strong>MaterialApp</strong> ได้)<br>
+การที่เรากำหนดค่า <strong>navigatorKey</strong> จะทำให้เราสามารถเข้าถึง <strong>State</strong> ของ <strong>Navigator</strong> ได้โดยตรง โดยที่เราไม่ต้องใช้ <code>Navigator.of(context)</code> ครับ</p> <p>เมื่อลองรันดูก็จะพบว่าทำงานได้เหมือนเดิม แน่นอนว่าสิ่งที่ต่างกันก็คือเราไม่ต้องใช้ <strong>context</strong> ครับ<br>
+ดังนั้นเราจึงสามารถเขียน <code>locator&lt;NavigationService&gt;().navigateTo(...)</code> ที่ไหนก็ได้ จะเอาไปใส่ใน Business Logic ก็ยังได้</p> <p>ดาวน์โหลด Source Code <a href="https://github.com/aliceblock/global_navigation" target="_blank" rel="noopener noreferrer">ที่นี่<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <hr></div> <footer class="page-edit"><!----> <div data-href="https://blog.intception.me/dev/flutter/global-navigation.html" data-width="100%" data-numposts="5" class="fb-comments" style="max-width:99%;"></div> <div class="last-updated"><span class="prefix">อัปเดตเมื่อ: </span> <span class="time">1 ปีที่แล้ว</span></div></footer> <!----> </main></div></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.e8816fbe.js" defer></script><script src="/assets/js/23.98f77880.js" defer></script><script src="/assets/js/2.5511de28.js" defer></script><script src="/assets/js/32.958c025c.js" defer></script><script src="/assets/js/30.ceffa3ae.js" defer></script><script src="/assets/js/29.6bb21054.js" defer></script><script src="/assets/js/41.a1cbfaa2.js" defer></script>
+  </body>
+</html>

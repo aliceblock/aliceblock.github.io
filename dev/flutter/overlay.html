@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="th-TH">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ใช้ Overlay ทำ Suggestion | Intception Hideout</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="การใช้ Overlay จะช่วยทำให้เราสามารถซ้อน Widget ได้อย่างอิสระ และผมจะเอาเจ้า Overlay นี่แหละมาทำ Suggestion">
+    <meta name="image" content="https://blog.intception.me/flutter/overlay.jpg">
+    <meta name="twitter:title" content="ใช้ Overlay ทำ Suggestion">
+    <meta name="twitter:description" content="การใช้ Overlay จะช่วยทำให้เราสามารถซ้อน Widget ได้อย่างอิสระ และผมจะเอาเจ้า Overlay นี่แหละมาทำ Suggestion">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://blog.intception.me/flutter/overlay.jpg">
+    <meta name="twitter:url" content="https://blog.intception.me/dev/flutter/overlay.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="ใช้ Overlay ทำ Suggestion">
+    <meta property="og:description" content="การใช้ Overlay จะช่วยทำให้เราสามารถซ้อน Widget ได้อย่างอิสระ และผมจะเอาเจ้า Overlay นี่แหละมาทำ Suggestion">
+    <meta property="og:image" content="https://blog.intception.me/flutter/overlay.jpg">
+    <meta property="og:url" content="https://blog.intception.me/dev/flutter/overlay.html">
+    <meta property="og:site_name" content="Intception Hideout">
+    <meta property="article:author" content="https://www.facebook.com/100002134179036">
+    <meta property="article:published_time" content="September 13, 2019 10:00:00">
+    <meta property="article:tag" content="dev">
+    <meta itemprop="name" content="ใช้ Overlay ทำ Suggestion">
+    <meta itemprop="description" content="การใช้ Overlay จะช่วยทำให้เราสามารถซ้อน Widget ได้อย่างอิสระ และผมจะเอาเจ้า Overlay นี่แหละมาทำ Suggestion">
+    <meta itemprop="image" content="https://blog.intception.me/flutter/overlay.jpg">
+    <meta property="fb:app_id" content="378991759371355">
+    <meta property="article:publisher" content="https://www.facebook.com/intception">
+    
+    <link rel="preload" href="/assets/css/0.styles.9fcaea78.css" as="style"><link rel="preload" href="/assets/js/app.e8816fbe.js" as="script"><link rel="preload" href="/assets/js/23.98f77880.js" as="script"><link rel="preload" href="/assets/js/2.5511de28.js" as="script"><link rel="preload" href="/assets/js/24.97336265.js" as="script"><link rel="preload" href="/assets/js/30.ceffa3ae.js" as="script"><link rel="preload" href="/assets/js/29.6bb21054.js" as="script"><link rel="preload" href="/assets/js/41.a1cbfaa2.js" as="script"><link rel="prefetch" href="/assets/js/1.7038105b.js"><link rel="prefetch" href="/assets/js/10.93173d2d.js"><link rel="prefetch" href="/assets/js/11.0f9c5f1c.js"><link rel="prefetch" href="/assets/js/12.91b64e47.js"><link rel="prefetch" href="/assets/js/13.08a3a51f.js"><link rel="prefetch" href="/assets/js/14.c8e0a547.js"><link rel="prefetch" href="/assets/js/15.43c6b249.js"><link rel="prefetch" href="/assets/js/16.99ef011c.js"><link rel="prefetch" href="/assets/js/17.b660276a.js"><link rel="prefetch" href="/assets/js/18.7c32fc21.js"><link rel="prefetch" href="/assets/js/19.3aa4ded7.js"><link rel="prefetch" href="/assets/js/20.f9256596.js"><link rel="prefetch" href="/assets/js/21.4dd2eea6.js"><link rel="prefetch" href="/assets/js/22.bebac973.js"><link rel="prefetch" href="/assets/js/25.c15aed46.js"><link rel="prefetch" href="/assets/js/26.cdb80987.js"><link rel="prefetch" href="/assets/js/27.061d534a.js"><link rel="prefetch" href="/assets/js/28.a7dedf0a.js"><link rel="prefetch" href="/assets/js/31.4cee5970.js"><link rel="prefetch" href="/assets/js/32.958c025c.js"><link rel="prefetch" href="/assets/js/33.1baa13ba.js"><link rel="prefetch" href="/assets/js/34.d9701686.js"><link rel="prefetch" href="/assets/js/35.25566597.js"><link rel="prefetch" href="/assets/js/36.455eb1cd.js"><link rel="prefetch" href="/assets/js/37.f9701788.js"><link rel="prefetch" href="/assets/js/38.7adbe429.js"><link rel="prefetch" href="/assets/js/39.0e42479f.js"><link rel="prefetch" href="/assets/js/4.d70afffc.js"><link rel="prefetch" href="/assets/js/40.6427dc18.js"><link rel="prefetch" href="/assets/js/42.a1b17ae6.js"><link rel="prefetch" href="/assets/js/43.b629483d.js"><link rel="prefetch" href="/assets/js/44.3ce67008.js"><link rel="prefetch" href="/assets/js/45.58b17ad5.js"><link rel="prefetch" href="/assets/js/46.68e3b49f.js"><link rel="prefetch" href="/assets/js/47.72e2cea9.js"><link rel="prefetch" href="/assets/js/48.2928f898.js"><link rel="prefetch" href="/assets/js/49.94a83419.js"><link rel="prefetch" href="/assets/js/5.dbd44f85.js"><link rel="prefetch" href="/assets/js/6.2ecdc96d.js"><link rel="prefetch" href="/assets/js/7.1abc7760.js"><link rel="prefetch" href="/assets/js/8.47b30f38.js"><link rel="prefetch" href="/assets/js/9.3d2ae7fe.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.9fcaea78.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div data-v-500e1d8c><div class="theme-container" data-v-500e1d8c><header class="navbar" data-v-500e1d8c><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="Intception Hideout" class="logo"> <span class="site-name can-hide">Intception Hideout</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><a href="/dev/" class="nav-link router-link-active">Dev</a></div><div class="nav-item"><a href="/lifestyle/" class="nav-link">Lifestyle</a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-500e1d8c></div> <aside class="sidebar" data-v-500e1d8c><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><a href="/dev/" class="nav-link router-link-active">Dev</a></div><div class="nav-item"><a href="/lifestyle/" class="nav-link">Lifestyle</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>ใช้ Overlay ทำ Suggestion</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/dev/flutter/overlay.html#ลองสร้างโปรเจคกันก่อน" class="sidebar-link">ลองสร้างโปรเจคกันก่อน</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/dev/flutter/overlay.html#ใช้-overlay-แก้ปัญหา" class="sidebar-link">ใช้ Overlay แก้ปัญหา</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/dev/flutter/overlay.html#ทําให้-overlay-ตามติด-textfield" class="sidebar-link">ทำให้ Overlay ตามติด TextField</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/dev/flutter/overlay.html#สรุป" class="sidebar-link">สรุป</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page" data-v-500e1d8c> <div class="theme-default-content content__default"><h1 id="ใช้-overlay-ทํา-suggestion"><a href="#ใช้-overlay-ทํา-suggestion" class="header-anchor">#</a> ใช้ Overlay ทำ Suggestion</h1> <span data-v-11962d9e><a href="/?tag=dev" class="tag-element" data-v-eeb2ca7e data-v-11962d9e>#Dev</a><a href="/?tag=flutter" class="tag-element" data-v-eeb2ca7e data-v-11962d9e>#Flutter</a></span> <p>การใช้ <strong>Overlay</strong> จะช่วยทำให้เราสามารถซ้อน Widget ได้อย่างอิสระ และผมจะเอาเจ้า Overlay นี่แหละมาทำ Suggestion<br>
+โดย <strong>Overlay</strong> จะอยู่ในเลเยอร์ชั้นที่สูงกว่า Widget อื่นๆ ซึ่งหลายคนอาจจะสงสัยว่าใช้ <strong>Stack</strong> Widget ก็ได้รึเปล่า<br>
+คำตอบคือได้ครับ แต่จะมีปัญหาบางอย่างถ้าเราเอามาใช้ทำ Suggestion</p> <img src="/assets/img/00.affc4225.jpg" alt="Header"><h2 id="ลองสร้างโปรเจคกันก่อน"><a href="#ลองสร้างโปรเจคกันก่อน" class="header-anchor">#</a> ลองสร้างโปรเจคกันก่อน</h2> <ol><li>รันคำสั่งใน Command line เพื่อสร้างโปรเจค Flutter</li></ol> <div class="language-sh extra-class"><pre class="language-sh"><code>flutter create sample_overlay <span class="token comment"># สร้างโปรเจคชื่อ sample_overlay</span>
+</code></pre></div><ol start="2"><li>เปิดโปรเจคขึ้นมาแล้วแก้ไฟล์ <code>lib/main.dart</code> ตามนี้</li></ol> <div class="language-dart extra-class"><pre class="language-dart"><code><span class="token keyword">import</span> <span class="token string">'package:flutter/material.dart'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">runApp</span><span class="token punctuation">(</span><span class="token function">MyApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MyApp</span> <span class="token keyword">extends</span> <span class="token class-name">StatelessWidget</span> <span class="token punctuation">{</span>
+  <span class="token metadata symbol">@override</span>
+  Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">MaterialApp</span><span class="token punctuation">(</span>
+      home<span class="token punctuation">:</span> <span class="token function">GestureDetector</span><span class="token punctuation">(</span>
+        <span class="token comment">// ใส่ไว้เพื่อให้ Focus ที่ TextField หายเมื่อคลิกข้างนอก</span>
+        onTap<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          FocusScope<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">requestFocus</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FocusNode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        child<span class="token punctuation">:</span> <span class="token function">Home</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Home</span> <span class="token keyword">extends</span> <span class="token class-name">StatefulWidget</span> <span class="token punctuation">{</span>
+  <span class="token metadata symbol">@override</span>
+  _HomeState <span class="token function">createState</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">_HomeState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">_HomeState</span> <span class="token keyword">extends</span> <span class="token class-name">State</span><span class="token operator">&lt;</span>Home<span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  FocusNode _focusNode <span class="token operator">=</span> <span class="token function">FocusNode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// FocusNode เอาไว้ควบคุมการโฟกัส Widget</span>
+  bool showSuggestion <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+
+  <span class="token metadata symbol">@override</span>
+  <span class="token keyword">void</span> <span class="token function">initState</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    _focusNode<span class="token punctuation">.</span><span class="token function">addListener</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// Event เมื่อมีการเปลี่ยนแปลงโฟกัสของ Widget ที่มี FocusNode นี้</span>
+      <span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>showSuggestion <span class="token operator">=</span> _focusNode<span class="token punctuation">.</span>hasFocus<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">initState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token metadata symbol">@override</span>
+  Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">Scaffold</span><span class="token punctuation">(</span>
+      appBar<span class="token punctuation">:</span> <span class="token function">AppBar</span><span class="token punctuation">(</span>
+        title<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span>
+          <span class="token string">'Awesome Overlay'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      body<span class="token punctuation">:</span> <span class="token function">Container</span><span class="token punctuation">(</span>
+        color<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>green<span class="token punctuation">,</span>
+        padding<span class="token punctuation">:</span> EdgeInsets<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token number">10.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        child<span class="token punctuation">:</span> <span class="token function">Column</span><span class="token punctuation">(</span>
+          mainAxisSize<span class="token punctuation">:</span> MainAxisSize<span class="token punctuation">.</span>min<span class="token punctuation">,</span>
+          children<span class="token punctuation">:</span> <span class="token operator">&lt;</span>Widget<span class="token operator">&gt;</span><span class="token punctuation">[</span>
+            <span class="token function">TextField</span><span class="token punctuation">(</span>
+              decoration<span class="token punctuation">:</span> <span class="token function">InputDecoration</span><span class="token punctuation">(</span>
+                filled<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                fillColor<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>white<span class="token punctuation">,</span>
+                focusColor<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>white<span class="token punctuation">,</span>
+                border<span class="token punctuation">:</span> <span class="token function">OutlineInputBorder</span><span class="token punctuation">(</span>
+                  borderRadius<span class="token punctuation">:</span> BorderRadius<span class="token punctuation">.</span><span class="token function">circular</span><span class="token punctuation">(</span><span class="token number">5.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                <span class="token punctuation">)</span><span class="token punctuation">,</span>
+              <span class="token punctuation">)</span><span class="token punctuation">,</span>
+              focusNode<span class="token punctuation">:</span> _focusNode<span class="token punctuation">,</span>
+            <span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token comment">// เมื่อ TextField ถูกคลิกจะแสดง Suggestion ขึ้นมา</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>showSuggestion<span class="token punctuation">)</span> <span class="token function">suggestionList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+Widget <span class="token function">suggestionList</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">Container</span><span class="token punctuation">(</span>
+    height<span class="token punctuation">:</span> <span class="token number">100.0</span><span class="token punctuation">,</span>
+    color<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>white<span class="token punctuation">,</span>
+    child<span class="token punctuation">:</span> <span class="token function">ListView</span><span class="token punctuation">(</span>
+      children<span class="token punctuation">:</span> <span class="token operator">&lt;</span>Widget<span class="token operator">&gt;</span><span class="token punctuation">[</span>
+        <span class="token function">ListTile</span><span class="token punctuation">(</span>title<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">'This'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token function">ListTile</span><span class="token punctuation">(</span>title<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">'is'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token function">ListTile</span><span class="token punctuation">(</span>title<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">'very'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token function">ListTile</span><span class="token punctuation">(</span>title<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">'awesome'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><center class="medium-zoom"><div class="force-max" style="max-width:50%;"><img src="/assets/img/01.a8e0868d.png" alt="Title"></div> <div class="caption">หน้าจอเริ่มต้น</div></center> <p>จากโค้ดด้านบนเมื่อได้ลองแล้วก็จะพบว่า Container สีเขียวที่ครอบ Widget <strong>TextField</strong> และ Suggestion นั้นจะมีการเปลี่ยนขนาดเมื่อผมคลิกที่ตัว TextField และมี Suggestion แสดงออกมา ซึ่งนั่นไม่ใช่สิ่งที่ผมต้องการ ผมไม่ได้ต้องการให้มันเปลี่ยนขนาดไปๆมาๆ (ดูรูปตัวอย่างด้านล่าง เหมือนๆกันครับ)</p> <p>ทีนี้ผมจะเปลี่ยนไปใช้ <strong>Stack</strong> แทน <strong>Column</strong> ตามนี้</p> <div class="language-dart extra-class"><div class="highlight-lines"><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><br><br><br><br><br><br><br><br></div><pre class="language-dart"><code><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token metadata symbol">@override</span>
+Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">Scaffold</span><span class="token punctuation">(</span>
+    appBar<span class="token punctuation">:</span> <span class="token function">AppBar</span><span class="token punctuation">(</span>
+      title<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span>
+        <span class="token string">'Awesome Overlay'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    body<span class="token punctuation">:</span> <span class="token function">Container</span><span class="token punctuation">(</span>
+      color<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>green<span class="token punctuation">,</span>
+      padding<span class="token punctuation">:</span> EdgeInsets<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token number">10.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      child<span class="token punctuation">:</span> <span class="token function">Stack</span><span class="token punctuation">(</span>
+        children<span class="token punctuation">:</span> <span class="token operator">&lt;</span>Widget<span class="token operator">&gt;</span><span class="token punctuation">[</span>
+          <span class="token function">TextField</span><span class="token punctuation">(</span>
+            decoration<span class="token punctuation">:</span> <span class="token function">InputDecoration</span><span class="token punctuation">(</span>
+              filled<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+              fillColor<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>white<span class="token punctuation">,</span>
+              focusColor<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>white<span class="token punctuation">,</span>
+              border<span class="token punctuation">:</span> <span class="token function">OutlineInputBorder</span><span class="token punctuation">(</span>
+                borderRadius<span class="token punctuation">:</span> BorderRadius<span class="token punctuation">.</span><span class="token function">circular</span><span class="token punctuation">(</span><span class="token number">5.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+              <span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token punctuation">)</span><span class="token punctuation">,</span>
+            focusNode<span class="token punctuation">:</span> _focusNode<span class="token punctuation">,</span>
+          <span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>showSuggestion<span class="token punctuation">)</span>
+            <span class="token function">Container</span><span class="token punctuation">(</span>
+              margin<span class="token punctuation">:</span> EdgeInsets<span class="token punctuation">.</span><span class="token function">only</span><span class="token punctuation">(</span>top<span class="token punctuation">:</span> <span class="token number">62.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// ต้องใส่ Marginเพิ่มไม่งั้นมันจะทับกัน</span>
+              child<span class="token punctuation">:</span> <span class="token function">suggestionList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</code></pre></div><p>ซึ่งปัญหาก็จะเหมือนๆเดิมก็คือขนาดของ <strong>Container</strong> ก็ยังขยายตามสิ่งที่อยู่ข้างในอยู่ดี แถมเกิดปัญหาใหม่อีกคือเราต้องคอย <strong>Margin</strong> ให้ตรง (ซึ่งผมจะไม่ทำ 🤣)</p> <center class="medium-zoom"><div class="force-max" style="max-width:50%;"><img src="/assets/img/02.109a5d96.png" alt="Title"></div> <div class="caption">เหมือนอันเริ่มต้นแหละครับ แต่ต้องใส่ Margin</div></center> <h2 id="ใช้-overlay-แก้ปัญหา"><a href="#ใช้-overlay-แก้ปัญหา" class="header-anchor">#</a> ใช้ Overlay แก้ปัญหา</h2> <p>ดังนั้นทางรอดของผมก็คือ เปลี่ยนไปใช้ <strong>Overlay</strong> แทน<br>
+โดยผมจะทำการย้ายส่วนของ <strong>TextField</strong> และ <strong>suggestionList</strong> ของผมไปอยู่ใน <strong>StatefulWidget</strong> อันใหม่เป็นครอบครัวเดียวกัน จะไปไหนก็ไปด้วยกันเลย</p> <div class="language-dart extra-class"><div class="highlight-lines"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><br><br><br></div><pre class="language-dart"><code><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Home</span> <span class="token keyword">extends</span> <span class="token class-name">StatefulWidget</span> <span class="token punctuation">{</span>
+  <span class="token metadata symbol">@override</span>
+  _HomeState <span class="token function">createState</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">_HomeState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">_HomeState</span> <span class="token keyword">extends</span> <span class="token class-name">State</span><span class="token operator">&lt;</span>Home<span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token metadata symbol">@override</span>
+  Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">Scaffold</span><span class="token punctuation">(</span>
+      appBar<span class="token punctuation">:</span> <span class="token function">AppBar</span><span class="token punctuation">(</span>
+        title<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span>
+          <span class="token string">'Awesome Overlay'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      body<span class="token punctuation">:</span> <span class="token function">Container</span><span class="token punctuation">(</span>
+        color<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>green<span class="token punctuation">,</span>
+        padding<span class="token punctuation">:</span> EdgeInsets<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token number">10.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        child<span class="token punctuation">:</span> <span class="token function">Stack</span><span class="token punctuation">(</span>
+          children<span class="token punctuation">:</span> <span class="token operator">&lt;</span>Widget<span class="token operator">&gt;</span><span class="token punctuation">[</span>
+            <span class="token function">TextFieldWithSuggestion</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">TextFieldWithSuggestion</span> <span class="token keyword">extends</span> <span class="token class-name">StatefulWidget</span> <span class="token punctuation">{</span>
+  <span class="token metadata symbol">@override</span>
+  _TextFieldWithSuggestionState <span class="token function">createState</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span>
+      <span class="token function">_TextFieldWithSuggestionState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">_TextFieldWithSuggestionState</span> <span class="token keyword">extends</span> <span class="token class-name">State</span><span class="token operator">&lt;</span>TextFieldWithSuggestion<span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  FocusNode _focusNode <span class="token operator">=</span> <span class="token function">FocusNode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// FocusNode เอาไว้ควบคุมการโฟกัส Widget</span>
+  OverlayEntry _overlay<span class="token punctuation">;</span>
+
+  <span class="token metadata symbol">@override</span>
+  <span class="token keyword">void</span> <span class="token function">initState</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    _focusNode<span class="token punctuation">.</span><span class="token function">addListener</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>_focusNode<span class="token punctuation">.</span>hasFocus<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        _overlay <span class="token operator">=</span> <span class="token function">_createSuggestionOverlay</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Overlay<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>_overlay<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        _overlay<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">initState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  OverlayEntry <span class="token function">_createSuggestionOverlay</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    RenderBox renderBox <span class="token operator">=</span>
+        context<span class="token punctuation">.</span><span class="token function">findRenderObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// พิกัด และขนาดการ Render ของ Widget นี้</span>
+    <span class="token keyword">var</span> size <span class="token operator">=</span> renderBox<span class="token punctuation">.</span>size<span class="token punctuation">;</span> <span class="token comment">// ขนาดของ Widget</span>
+    <span class="token keyword">var</span> offset <span class="token operator">=</span> renderBox
+        <span class="token punctuation">.</span><span class="token function">localToGlobal</span><span class="token punctuation">(</span>Offset<span class="token punctuation">.</span>zero<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// พิกัด X,Y ที่ Widget นี้แสดงอยู่</span>
+
+    <span class="token keyword">return</span> <span class="token function">OverlayEntry</span><span class="token punctuation">(</span>
+      builder<span class="token punctuation">:</span> <span class="token punctuation">(</span>context<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">Positioned</span><span class="token punctuation">(</span>
+        left<span class="token punctuation">:</span> offset<span class="token punctuation">.</span>dx<span class="token punctuation">,</span>
+        top<span class="token punctuation">:</span> offset<span class="token punctuation">.</span>dy <span class="token operator">+</span> size<span class="token punctuation">.</span>height <span class="token operator">+</span> <span class="token number">5.0</span><span class="token punctuation">,</span>
+        width<span class="token punctuation">:</span> size<span class="token punctuation">.</span>width<span class="token punctuation">,</span>
+        child<span class="token punctuation">:</span> <span class="token function">Material</span><span class="token punctuation">(</span>
+          elevation<span class="token punctuation">:</span> <span class="token number">2.0</span><span class="token punctuation">,</span>
+          child<span class="token punctuation">:</span> <span class="token function">_suggestionList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  Widget <span class="token function">_suggestionList</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">Container</span><span class="token punctuation">(</span>
+      height<span class="token punctuation">:</span> <span class="token number">100.0</span><span class="token punctuation">,</span>
+      color<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>white<span class="token punctuation">,</span>
+      child<span class="token punctuation">:</span> <span class="token function">ListView</span><span class="token punctuation">(</span>
+        children<span class="token punctuation">:</span> <span class="token operator">&lt;</span>Widget<span class="token operator">&gt;</span><span class="token punctuation">[</span>
+          <span class="token function">ListTile</span><span class="token punctuation">(</span>title<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">'This'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token function">ListTile</span><span class="token punctuation">(</span>title<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">'is'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token function">ListTile</span><span class="token punctuation">(</span>title<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">'very'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token function">ListTile</span><span class="token punctuation">(</span>title<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">'awesome'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token metadata symbol">@override</span>
+  Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">TextField</span><span class="token punctuation">(</span>
+      decoration<span class="token punctuation">:</span> <span class="token function">InputDecoration</span><span class="token punctuation">(</span>
+        filled<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        fillColor<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>white<span class="token punctuation">,</span>
+        focusColor<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>white<span class="token punctuation">,</span>
+        border<span class="token punctuation">:</span> <span class="token function">OutlineInputBorder</span><span class="token punctuation">(</span>
+          borderRadius<span class="token punctuation">:</span> BorderRadius<span class="token punctuation">.</span><span class="token function">circular</span><span class="token punctuation">(</span><span class="token number">5.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      focusNode<span class="token punctuation">:</span> _focusNode<span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</code></pre></div><p>ผลที่ได้ก็คือพื้นหลังไม่ขยายออกแล้ว เย่ 😁<br>
+จากตัวอย่างผมใช้ <strong>ListView</strong> แบบตรงๆ เราสามารถเปลี่ยนไปใช้ <strong>ListView.builder</strong> แทนก็ได้ครับ</p> <center class="medium-zoom"><div class="force-max" style="max-width:50%;"><img src="/assets/img/03.8a0be434.png" alt="Title"></div> <div class="caption">Suggestion Overylay ลอยอยู่เหนือทุกสิ่ง</div></center> <div class="warning custom-block"><p class="custom-block-title">คำเตือน</p> <p>ภายใต้ OverlayEntry จะต้องใส่ <code>Material</code> Widget ครอบไว้ด้วย เพราะหลายๆ Widget ต้องใช้<br>
+และ Overlay ไม่ได้ใส่มาให้ด้วย (ในที่นี้ผมใส่ elevation ไว้ด้วยให้ Suggestion เราดูเหมือนลอยๆอยู่)</p></div> <div class="language-dart extra-class"><div class="highlight-lines"><br><br><br><br><br><br><br><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><br><br><br><br><br></div><pre class="language-dart"><code><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token keyword">return</span> <span class="token function">OverlayEntry</span><span class="token punctuation">(</span>
+  builder<span class="token punctuation">:</span> <span class="token punctuation">(</span>context<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">Positioned</span><span class="token punctuation">(</span>
+    left<span class="token punctuation">:</span> offset<span class="token punctuation">.</span>dx<span class="token punctuation">,</span>
+    top<span class="token punctuation">:</span> offset<span class="token punctuation">.</span>dy <span class="token operator">+</span> size<span class="token punctuation">.</span>height <span class="token operator">+</span> <span class="token number">5.0</span><span class="token punctuation">,</span>
+    width<span class="token punctuation">:</span> size<span class="token punctuation">.</span>width<span class="token punctuation">,</span>
+    child<span class="token punctuation">:</span> <span class="token function">Material</span><span class="token punctuation">(</span>
+      elevation<span class="token punctuation">:</span> <span class="token number">2.0</span><span class="token punctuation">,</span>
+      child<span class="token punctuation">:</span> <span class="token function">suggestionList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</code></pre></div><h2 id="ทําให้-overlay-ตามติด-textfield"><a href="#ทําให้-overlay-ตามติด-textfield" class="header-anchor">#</a> ทำให้ Overlay ตามติด TextField</h2> <p>ทั้งนี้การใช้ Overlay ก็ยังอาจจะมีปัญหาได้อีกถ้า TextField ของเราขยับ/เปลี่ยนตำแหน่ง เจ้าตัว Overlay ของเราในตอนนี้มันจะไม่ขยับตามไปด้วยครับ ต้องใช้ <code>CompositedTransformFollower</code> และ <code>CompositedTransformTarget</code> ในการทำให้ Widget 2 ตัวติดตามกันโดยการเปลี่ยน</p> <div class="language-dart extra-class"><div class="highlight-lines"><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div><pre class="language-dart"><code><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token keyword">class</span> <span class="token class-name">_TextFieldWithSuggestionState</span> <span class="token keyword">extends</span> <span class="token class-name">State</span><span class="token operator">&lt;</span>TextFieldWithSuggestion<span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  FocusNode _focusNode <span class="token operator">=</span> <span class="token function">FocusNode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// FocusNode เอาไว้ควบคุมการโฟกัส Widget</span>
+  LayerLink _layerLink <span class="token operator">=</span> <span class="token function">LayerLink</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ตัวเชื่อมระว่าง Widget</span>
+  OverlayEntry _overlay<span class="token punctuation">;</span>
+
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+  OverlayEntry <span class="token function">_createSuggestionOverlay</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    RenderBox renderBox <span class="token operator">=</span>
+        context<span class="token punctuation">.</span><span class="token function">findRenderObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// พิกัด และขนาดการ Render ของ Widget นี้</span>
+    <span class="token keyword">var</span> size <span class="token operator">=</span> renderBox<span class="token punctuation">.</span>size<span class="token punctuation">;</span> <span class="token comment">// ขนาดของ Widget</span>
+
+    <span class="token keyword">return</span> <span class="token function">OverlayEntry</span><span class="token punctuation">(</span>
+      builder<span class="token punctuation">:</span> <span class="token punctuation">(</span>context<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">Positioned</span><span class="token punctuation">(</span>
+        width<span class="token punctuation">:</span> size<span class="token punctuation">.</span>width<span class="token punctuation">,</span>
+        child<span class="token punctuation">:</span> <span class="token function">CompositedTransformFollower</span><span class="token punctuation">(</span>
+          link<span class="token punctuation">:</span> _layerLink<span class="token punctuation">,</span>
+          offset<span class="token punctuation">:</span> <span class="token function">Offset</span><span class="token punctuation">(</span><span class="token number">0.0</span><span class="token punctuation">,</span> size<span class="token punctuation">.</span>height <span class="token operator">+</span> <span class="token number">5.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+          child<span class="token punctuation">:</span> <span class="token function">Material</span><span class="token punctuation">(</span>
+            elevation<span class="token punctuation">:</span> <span class="token number">2.0</span><span class="token punctuation">,</span>
+            child<span class="token punctuation">:</span> <span class="token function">_suggestionList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+  <span class="token metadata symbol">@override</span>
+  Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">CompositedTransformTarget</span><span class="token punctuation">(</span>
+      link<span class="token punctuation">:</span> _layerLink<span class="token punctuation">,</span>
+      child<span class="token punctuation">:</span> <span class="token function">TextField</span><span class="token punctuation">(</span>
+        decoration<span class="token punctuation">:</span> <span class="token function">InputDecoration</span><span class="token punctuation">(</span>
+          filled<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          fillColor<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>white<span class="token punctuation">,</span>
+          focusColor<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>white<span class="token punctuation">,</span>
+          border<span class="token punctuation">:</span> <span class="token function">OutlineInputBorder</span><span class="token punctuation">(</span>
+            borderRadius<span class="token punctuation">:</span> BorderRadius<span class="token punctuation">.</span><span class="token function">circular</span><span class="token punctuation">(</span><span class="token number">5.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+        focusNode<span class="token punctuation">:</span> _focusNode<span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</code></pre></div><p>ลอง Restart ดูก็จะพบว่าได้ผลเหมือนเดิม แต่สิ่งที่ต่างออกไปคือ Widget ทั้งสองตัวจะเคลื่อนที่ตามๆกันครับ ถ้า Widget ที่เป็น Target มีการเปลี่ยนตำแหน่ง</p> <p>ดาวน์โหลด Source Code <a href="https://github.com/aliceblock/sample_overlay" target="_blank" rel="noopener noreferrer">ที่นี่<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="สรุป"><a href="#สรุป" class="header-anchor">#</a> สรุป</h2> <p>เอาจริงๆถ้าเป็นคนที่เคยเขียนเว็บมาก่อนอาจจะมองภาพเป็น css <code>position: absolute</code> ก็ได้อยู่<br>
+และ <strong>Overlay</strong> ยังสามารถเอาไปใช้ประยุกต์ได้อีกหลายอย่าง<br>
+ถ้าหากมีข้อสงสัยอะไรสามารถติดต่อผ่าน <a href="https://facebook.com/intception" target="_blank" rel="noopener noreferrer">Facebook Page<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> ของผมได้ครับ</p> <hr></div> <footer class="page-edit"><!----> <div data-href="https://blog.intception.me/dev/flutter/overlay.html" data-width="100%" data-numposts="5" class="fb-comments" style="max-width:99%;"></div> <div class="last-updated"><span class="prefix">อัปเดตเมื่อ: </span> <span class="time">1 ปีที่แล้ว</span></div></footer> <!----> </main></div></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.e8816fbe.js" defer></script><script src="/assets/js/23.98f77880.js" defer></script><script src="/assets/js/2.5511de28.js" defer></script><script src="/assets/js/24.97336265.js" defer></script><script src="/assets/js/30.ceffa3ae.js" defer></script><script src="/assets/js/29.6bb21054.js" defer></script><script src="/assets/js/41.a1cbfaa2.js" defer></script>
+  </body>
+</html>
